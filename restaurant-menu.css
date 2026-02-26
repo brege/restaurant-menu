@@ -1,0 +1,174 @@
+/* plugins/restaurant-menu/restaurant-menu.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@400;600&display=swap');
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f5ed; /* Light cream background */
+}
+
+.menu-container {
+    width: 8.5in; /* Standard letter width */
+    min-height: 11in; /* Allow content to push height if needed */
+    margin: 0 auto;
+    padding: 0.8in; /* Adjust padding to give a border effect, slightly less than 1in now */
+    box-sizing: border-box;
+    background-color: #fff;
+    border: 1px solid #ddd; /* Subtle border */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    text-align: center; /* Default for logo and main titles */
+}
+
+.header-section {
+    margin-bottom: 0.7in; /* More space below header section */
+    text-align: center;
+}
+
+.menu-logo {
+    max-width: 150px; /* Adjust size as needed */
+    height: auto;
+    margin-bottom: 0.2in; /* Space below logo */
+    filter: grayscale(100%); /* Ensures the logo is black and white */
+    display: block; /* Ensures it takes its own line */
+    margin-left: auto; /* Center the logo if max-width is set */
+    margin-right: auto; /* Center the logo if max-width is set */
+}
+
+.menu-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em; /* Slightly smaller for 'FARMER'S MARKET MENU' */
+    font-weight: 700;
+    color: #5a4b40; /* Darker brown/grey for title */
+    margin-top: 0;
+    margin-bottom: 5px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.menu-date {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.9em;
+    color: #777;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.menu-content {
+    width: 100%;
+    max-width: 6.5in; /* Constrain content width for better readability */
+    text-align: left; /* Align menu items to the left */
+}
+
+/* Styling for Markdown rendered elements */
+/* Main section heading (e.g., 'Farm-to-table Menu') */
+.menu-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8em;
+    font-weight: 400; /* Lighter weight for this heading */
+    color: #5a4b40;
+    text-align: center;
+    margin-top: 1.5em;
+    margin-bottom: 0.6em; /* Reduced margin */
+    position: relative;
+    padding-bottom: 0.2em; /* Space for the line */
+}
+
+.menu-content h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 1px;
+    background: #5a4b40;
+    margin: 10px auto 0; /* Centered line below H2 */
+}
+
+/* Item category headings (e.g., 'Acorn & Pomegranate Rocket Salad') */
+.menu-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4em;
+    font-weight: 400; /* Lighter weight for item titles */
+    color: #5a4b40;
+    margin-top: 1.5em; /* Space before each item category */
+    margin-bottom: 0.2em;
+    text-align: center; /* Center item titles too */
+}
+
+/* Styling for general paragraphs, used for descriptions */
+.menu-content p {
+    font-family: 'Open Sans', sans-serif; /* Explicitly ensure Open Sans */
+    font-size: 1em;
+    margin-top: 0;
+    margin-bottom: 0.5em; /* Space below descriptions */
+    color: #444;
+    text-align: center; /* Center item descriptions */
+}
+
+/* Styling for lists, like "add chicken / add shrimp" */
+.menu-content ul, .menu-content ol {
+    list-style: none;
+    padding: 0;
+    margin: 0.3em 0 1em 0; /* Adjusted margins for lists */
+    text-align: center; /* Center list items */
+}
+
+.menu-content ul li {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.95em; /* Slightly smaller for sub-items */
+    margin-bottom: 0.2em;
+    color: #555;
+}
+
+.menu-content ul li::before {
+    content: ""; /* No bullet for these sub-items */
+    display: inline-block;
+    width: 0;
+    margin-left: 0;
+}
+
+/* Specific styling for the italicized lines ("add chicken / add shrimp" and "we gladly acknowledge...") */
+.menu-content em {
+    font-family: 'Open Sans', sans-serif; /* Ensure Open Sans for italics */
+    font-size: 0.9em;
+    color: #666;
+    display: block; /* Make sure it's on its own line if it's currently inline in Markdown */
+    margin-top: -0.2em; /* Pull it up slightly closer to the description */
+    margin-bottom: 0.5em;
+    text-align: center;
+}
+
+/* Styling for the price line (e.g., "$9", "$16", "$6") */
+/* Assuming prices are also plain paragraphs like "bourbon-star anise gastrique" for now.
+   We target the price specifically in Markdown (e.g., making it bold or giving it a class)
+   for more precise control later if needed. For now, it will use general p style. */
+/* If prices are consistently the *last* line of a section and should be different: */
+.menu-content .item-price { /* This class would need to be added to the HTML by index.js */
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #5a4b40;
+    margin-top: 0.5em;
+    margin-bottom: 1.5em;
+    text-align: center;
+}
+
+
+.footer-note {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.8em;
+    color: #777;
+    margin-top: auto; /* Pushes the footer to the bottom */
+    padding-top: 1em;
+    border-top: 1px solid #eee;
+    text-align: center;
+    font-style: italic;
+    width: 80%; /* Constrain width of footer note */
+}
