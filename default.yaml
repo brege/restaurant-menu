@@ -1,0 +1,8 @@
+plugin_name: restaurant-menu
+version: 1.0.0
+protocol: v1
+
+description: Plugin for generating restaurant menus.
+handler_script: index.js
+css_files:
+  - style.css
