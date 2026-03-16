@@ -1,34 +1,14 @@
----
-cli_help: |
-  Plugin: restaurant-menu
-
-  Description: A plugin for `oshea` to generate elegant, print-ready restaurant menus. It leverages advanced custom handler capabilities to produce a visually formatted menu with a grayscale logo and specific typographical styling.
-
-
-  Features:
-    - **Advanced Custom Handler:** Generates bespoke HTML structures for menu layout, moving beyond `DefaultHandler`.
-    - **Grayscale Logo Integration:** Automatically converts and embeds a company logo (e.g., your profile icon) in black and white.
-    - **Stylized Typography:** Utilizes custom fonts (Google Fonts: Playfair Display, Open Sans) for titles, headings, and descriptions to achieve a professional, classic menu aesthetic.
-    - **Structured Menu Content:** Adapts Markdown content into a structured menu format.
-    - Customizable via its own default.yaml and style.css files.
-
-  Expected Front Matter:
-    - title: (string) Main title for the menu (e.g., "Farmer's Market Menu").
-    - date: (string or date, optional) Date of the menu.
-    - footerNote: (string, optional) A small note at the bottom of the menu (e.g., acknowledging suppliers).
-    - oshea_plugin: (string) Must be set to `restaurant-menu` for self-activation with example.
-
-  Configuration Notes (default.yaml):
-    - handler_script: Points to "index.js". This is the custom handler that generates the menu's HTML.
-    - pdf_options: Adjust page size (e.g., Letter), margins, etc., as needed for printing.
-    - css_files: Points to "style.css". Modify or override this file for custom styling.
-    - params.logo_file: (string, optional) Path to the logo image (e.g., `./logo.png`). This path is relative to the plugin's base directory.
-
-  Example Usage (after registration, or for self-activation):
-    oshea convert my_document.md --plugin restaurant-menu
----
-
 # `restaurant-menu` Plugin
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img src="./screenshot.png" width="50%">
+        <br><strong>Restaurant Menu Sample</strong>
+      </td>
+    </tr>
+  </table>
+</div>
 
 This plugin provides a customizable template for generating restaurant menus from Markdown.
 The example menu is adapted from a previous [Farm-to-fork pop-up](https://brege.org/recipes/menus/)
@@ -125,4 +105,3 @@ It showcases advanced `oshea` features, particularly the use of a custom handler
     oshea plugin add ./my-restaurant-menu --name my-restaurant-menu
     ```
     or via manual registration before using it.
-
